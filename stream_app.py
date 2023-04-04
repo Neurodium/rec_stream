@@ -1,12 +1,13 @@
 import streamlit as st
 import requests
+import os
 
 
-url = "http://localhost:7071/api/HttpTrigger1"
+url = os.environ['AZ_FUNC']
 
 
 st.write("Enter user ID:")
-user_id = st.number_input(label="User ID")
+user_id = st.number_input(label="User ID", min_value=0, format='%d')
 if st.button("Send"):
     params = {'user': user_id}
     response = requests.get(url, params=params)
