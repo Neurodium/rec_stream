@@ -3,7 +3,7 @@ import requests
 import os
 
 
-url = "https://p9recarticles.azurewebsites.net/api/httptrigger1"
+url = os.environ['AZ_FUNC']
 
 
 st.write("Enter user ID:")
